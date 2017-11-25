@@ -3,6 +3,10 @@ package game;
 import data.*;
 import server.ServerHandler;
 
+import java.io.StringReader;
+
+import javax.json.*;
+
 public class ServerConnection {
 
 	private ServerHandler sh;
@@ -40,8 +44,23 @@ public class ServerConnection {
 	
 	//user actions
 	public void interpretJSON(String JSON) {
-		//break up  JSON
+		//interpret  JSON
+
+		JsonReader jsonReader = Json.createReader(new StringReader(JSON));
+		JsonObject o = jsonReader.readObject();
 		
+		/*
+		JsonReader jsonReader = Json.createReader(new StringReader(JSON));
+		JsonArray arr = jsonReader.readArray();
+
+		String command = arr.getString(0);
+		String name = arr.getString(1);
+		
+		System.out.println(command);
+		System.out.println(name);
+		
+		int a = 0;
+		*/
 	}
 	
 	
@@ -53,6 +72,21 @@ public class ServerConnection {
 		
 	}
 	
+	
+	private void receiveNewPlayer(String name) {
+		
+	}
+	
+	
+	public static void main(String args[]) {
+		String dummyFightCommand = "{command:\"NEW_PLAYER\",name:\"Simon\"}";
+		String dummyMoveCommand = "{body:[{type:'command_move', target='3'}]}";
+
+		ServerConnection sc = new ServerConnection();
+		
+		sc.interpretJSON(dummyFightCommand);
+		
+	}
 	
 	
 }
