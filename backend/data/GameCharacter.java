@@ -5,16 +5,23 @@ public class GameCharacter {
 	private int health;
 	private int attack_power;
 	private int defend_power;
+	private int staerke;
 	
-	public GameCharacter (String sName, int iHealth, int iAttackPower, int iDefendPower) {
+	public GameCharacter (String sName, int iHealth, int iAttackPower, int iDefendPower, int iStaerke) {
 		this.setName(sName);
 		this.setHealth(iHealth);
 		this.setAttackPower(iAttackPower);
 		this.setDefendPower(iDefendPower);
-		
+		this.setStaerke(iStaerke);
 	}
 	
 	//setters
+	
+	public void setStaerke (int iStaerke) {
+		if (checkStaerke(iStaerke)) {
+			this.staerke = iStaerke;
+		}
+	}
 	
 	public void setName (String sName) {
 		this.name = sName;
@@ -56,6 +63,10 @@ public class GameCharacter {
 		return this.defend_power;
 	}
 	
+	public int getStaerke () {
+		return this.staerke;
+	}
+	
 	//checkers
 	
 	private boolean checkHealth (int iHealth) {
@@ -68,5 +79,9 @@ public class GameCharacter {
 	
 	private boolean checkDefendPower (int iDefendPower) {
 		return (iDefendPower > 0);
+	}
+	
+	private boolean checkStaerke (int iStaerke) {
+		return iStaerke >= 0;
 	}
 }
