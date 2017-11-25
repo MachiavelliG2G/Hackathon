@@ -24,7 +24,7 @@ export default class Counter extends React.Component {
         <div key={i} style={{'textAlign': 'left', 'borderLeft': '6px solid #2196F3 !important', 'backgroundColor': '#ddffff', 'marginBottom': '4px'}}>
           <h3>Name: {details.name}</h3>
           <p>HP: {details.hp}/{details.maxhp}</p>
-          <i style={{width: '100%', 'textAlign': 'right'}}>State: {details.state}</i>
+          <i style={{width: '100%', 'textAlign': 'right'}}>State: {details.status}</i>
         </div>
       );
     });
