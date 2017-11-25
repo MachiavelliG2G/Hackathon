@@ -1,4 +1,5 @@
 package data;
+import java.util.ArrayList;
 
 public class Fight {
 	private ArrayList<GameCharacter> participants;
