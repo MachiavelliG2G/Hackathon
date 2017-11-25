@@ -15,4 +15,8 @@ public class ParticipantContainer {
 	public void removeParticipant (int iIndex) {
 		this.participants.remove(iIndex);
 	}
+	
+	public ArrayList<Participant> getParticipants() {
+		return this.participants;
+	}
 }

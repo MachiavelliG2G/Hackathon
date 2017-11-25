@@ -6,14 +6,16 @@ public abstract class Participant {
 	private int defend_power;
 	private int agility;
 	private int type; // 0 ist Monster, 1 ist GameCharacter
+	private int status; //0 disconnected 1 besiegt/tot 2 ready 3 not ready
 	
-	public Participant (String sName, int iHealth, int iAttackPower, int iDefendPower, int iAgility, int iType) {
+	public Participant (String sName, int iHealth, int iAttackPower, int iDefendPower, int iAgility, int iType, int iStatus) {
 		this.setName(sName);
 		this.setHealth(iHealth);
 		this.setAttackPower(iAttackPower);
 		this.setDefendPower(iDefendPower);
 		this.setAgility(iAgility);	
 		this.setType(iType);
+		this.setStatus(iStatus);
 	}
 	
 	//setters
@@ -23,6 +25,13 @@ public abstract class Participant {
 			this.type = iType;
 		}
 	}
+	
+	public void setStatus (int iStatus) {
+		if (iStatus >= 0 && iStatus <= 3) {
+			this.status = iStatus;
+		}
+	}
+	
 	public void setAgility (int iAgility) {
 		if (checkAgility(iAgility)) {
 			this.agility = iAgility;
@@ -75,6 +84,10 @@ public abstract class Participant {
 	
 	public int getType () {
 		return this.type;
+	}
+	
+	public int getStatus () {
+		return this.status;
 	}
 	
 	//checkers
