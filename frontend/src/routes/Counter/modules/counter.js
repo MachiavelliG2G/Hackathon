@@ -41,7 +41,7 @@ const initialState = {
     },
     {
       name: 'Simi',
-      hp: 1,
+      hp: 1, 
       maxhp: 2
     }
   ],
