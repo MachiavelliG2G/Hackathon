@@ -8,7 +8,7 @@ export const Counter = ({ counter, increment, doubleAsync }) => (
     <h2>Boss HP: ? </h2>
     <button className='btnAttack'>On this Button you can perform your standard attack</button>
     <button className='btnAttack'>On this Button you can perform your special attack</button>
-   {/*} <button className='btn btn-primary' onClick={increment}>
+   {/*<button className='btn btn-primary' onClick={increment}>
       Increment
     </button>
     {' '}
