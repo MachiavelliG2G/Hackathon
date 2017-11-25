@@ -1,0 +1,26 @@
+{
+  "name": "testscripts",
+  "version": "1.0.0",
+  "description": "ahaha",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MachiavelliG2G/Hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MachiavelliG2G/Hackathon/issues"
+  },
+  "homepage": "https://github.com/MachiavelliG2G/Hackathon#readme",
+  "dependencies": {
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  }
+}
