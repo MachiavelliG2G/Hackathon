@@ -1,13 +1,12 @@
 package data;
 
 import java.util.ArrayList;
-import java.util.Map;<E>gChange.Map;
 
 public class World {
 	private ArrayList<Map> maps;
 	
 	public World () {
-		maps = new ArrayList<map>();
+		maps = new ArrayList<Map>();
 	}
 	
 	public Map getMaps(int iIndex) {

@@ -1,4 +1,8 @@
-import data.*
+package server;
+
+import java.util.ArrayList;
+
+import data.*;
 
 
 public class GameManager {
@@ -6,7 +10,7 @@ public class GameManager {
 	private Fight fight;
 	private static GameManager instance = null;
 
-	private GameManager () {
+	public GameManager () {
 		partCont = new ParticipantContainer();
 		fight = new Fight();
 	}

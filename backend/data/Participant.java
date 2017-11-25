@@ -1,5 +1,6 @@
+package data;
 
-public abstract class Participant {
+public class Participant {
 	private String name;
 	private int health;
 	private int attack_power;

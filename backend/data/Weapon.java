@@ -27,7 +27,7 @@ public class Weapon {
 		return this.name;
 	}
 	
-	public String getRating () {
+	public int getRating () {
 		return this.rating;
 	}
 	

@@ -17,11 +17,11 @@ public class Map {
 		this.id = iId;
 	}
 	
-	public setName (String sName) {
+	public void setName (String sName) {
 		this.name = sName;
 	}
 	
-	public setAnzahlMonster (int iAnzahlMonster) {
+	public void setAnzahlMonster (int iAnzahlMonster) {
 		if (checkAnzahlMonster(iAnzahlMonster)) {
 			this.anzahlMonster = iAnzahlMonster;
 		}

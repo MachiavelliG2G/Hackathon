@@ -15,7 +15,7 @@ public class Fight {
 	//setters
 	
 	public void addParticipant (Participant oParticipant) {
-		participants.add(oCharacter);
+		participants.add(oParticipant);
 	}
 	
 	public void removeParticipant (int iIndex) {
@@ -30,7 +30,7 @@ public class Fight {
 	
 	//getters
 	
-	public GameCharacter getParticipant (int iIndex) {
+	public Participant getParticipant (int iIndex) {
 		return this.participants.get(iIndex);
 	}
 	
@@ -54,7 +54,7 @@ public class Fight {
 		}
 	}
 	
-	public ArrayList<object> getReihenfolge () {
+	public ArrayList<Participant> getReihenfolge () {
 		Collections.sort(participants, new CustomComparator());
 		return participants;
 	}
