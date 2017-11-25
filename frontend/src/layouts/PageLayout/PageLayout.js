@@ -6,9 +6,9 @@ import './PageLayout.scss'
 export const PageLayout = ({ children }) => (
   <div className='container text-center'>
     <h1 size='13px'>Super Mega Multiplayer Game Release 2017</h1>
-    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
+    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Map</IndexLink>
     {' · '}
-    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
+    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Battle</Link>
     <div className='page-layout__viewport'>
       {children}
     </div>

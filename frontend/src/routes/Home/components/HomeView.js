@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import './HomeView.scss'
 
 export const HomeView = () => (
-  <div>
+  <div className='niceGuy'>
     <h4>Look at all these fantastic Buttons you can click!</h4>
     <h4>We're looking forward to your donation!</h4>
     <h4>If you're lucky you even get some random useless Duck Cash currency</h4>
