@@ -1,12 +1,12 @@
 package data;
 
-public class Monster {
+public class GameCharacter {
 	private String name;
 	private int health;
 	private int attack_power;
 	private int defend_power;
 	
-	public Monster (String sName, int iHealth, int iAttackPower, int iDefendPower) {
+	public GameCharacter (String sName, int iHealth, int iAttackPower, int iDefendPower) {
 		this.setName(sName);
 		this.setHealth(iHealth);
 		this.setAttackPower(iAttackPower);
