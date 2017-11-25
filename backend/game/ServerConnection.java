@@ -2,18 +2,34 @@ package game;
 
 import data.*;
 
-public class SocketManager {
+public class ServerConnection {
 
 	
-	public void postFightUpdate(Fight f) {
+	public void postFightUpdate(Fight f, Player p) {
 		
 	}
 	
-	public void postCharacterUpdate(GameCharacter c) {
+	public void postCharacterUpdate(GameCharacter c, Player p) {
+		
+	}
+	
+	public void post
+	
+	
+	//user actions
+	public void interpretJSON(String JSON) {
 		
 	}
 	
 	
-	public void receive
+	private void receiveFightCommand(GameCharacter c, String command) {
+		
+	}
+	
+	private void receiveMoveCommand(GameCharacter c, String command) {
+		
+	}
+	
+	
 	
 }

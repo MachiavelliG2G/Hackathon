@@ -36,7 +36,8 @@ public class ServerHandler {
     
             // Bind and start to accept incoming connections.
             ChannelFuture f = b.bind(port).sync(); // (7)
-    
+
+            System.out.println("Open successful");
             // Wait until the server socket is closed.
             // In this example, this does not happen, but you can do that to gracefully
             // shut down your server.
@@ -44,15 +45,17 @@ public class ServerHandler {
         } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
+            System.out.println("Server has shut down");
         }
     }
     
     public static void main(String[] args) throws Exception {
+    	System.out.println("Start");
         int port;
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 5566;
         }
         new ServerHandler(port).run();
     }
