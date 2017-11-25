@@ -1,20 +1,20 @@
 package data;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Fight {
-	private ArrayList<GameCharacter> participants;
+	private ArrayList<Participant> participants;
 	private int roundCount;
-	private Monster monster;
 	
-	public Fight (int iRoundCount, Monster oMonster) {
-		this.participants = new ArrayList<GameCharacter>();
-		this.setMonster(oMonster);
-		this.setRoundCount(iRoundCount);
+	public Fight () {
+		this.participants = new ArrayList<Participant>();
+		this.setRoundCount(0);
 	}
 	
 	//setters
 	
-	public void addParticipant (GameCharacter oCharacter) {
+	public void addParticipant (Participant oParticipant) {
 		participants.add(oCharacter);
 	}
 	
@@ -28,10 +28,6 @@ public class Fight {
 		}
 	}
 	
-	public void setMonster (Monster oMonster) {
-		this.monster = oMonster;
-	}
-	
 	//getters
 	
 	public GameCharacter getParticipant (int iIndex) {
@@ -42,14 +38,40 @@ public class Fight {
 		return this.roundCount;
 	}
 	
-	public Monster getMonster () {
-		return this.monster;
-	}
-	
 	//checkers
 	
 	private boolean checkRoundCount (int iRoundCount) {
 		return (iRoundCount >= 0);
 	}
+	
+	//other methods
+	
+	public void initialize () {
+		Random rand = new Random();
+		for (Participant part: participants) {
+			part.setHealth(100);
+			part.setAgility(rand.nextInt(1000000000));
+		}
+	}
+	
+	public ArrayList<object> getReihenfolge () {
+		Collections.sort(participants, new CustomComparator());
+		return participants;
+	}
+	
+	public void attack () {
+		for (Participant part: participants) {
+			if (part.getType() == 0) {
+				// Monster
+			} else {
+				// Game Character
+			}
+		}
+		roundCount++;
+	}
+	
+	
+	
+	
 	
 }

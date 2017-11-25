@@ -1,25 +1,31 @@
-package data;
 
-public class GameCharacter {
+public abstract class Participant {
 	private String name;
 	private int health;
 	private int attack_power;
 	private int defend_power;
-	private int staerke;
+	private int agility;
+	private int type; // 0 ist Monster, 1 ist GameCharacter
 	
-	public GameCharacter (String sName, int iHealth, int iAttackPower, int iDefendPower, int iStaerke) {
+	public Participant (String sName, int iHealth, int iAttackPower, int iDefendPower, int iAgility, int iType) {
 		this.setName(sName);
 		this.setHealth(iHealth);
 		this.setAttackPower(iAttackPower);
 		this.setDefendPower(iDefendPower);
-		this.setStaerke(iStaerke);
+		this.setAgility(iAgility);	
+		this.setType(iType);
 	}
 	
 	//setters
 	
-	public void setStaerke (int iStaerke) {
-		if (checkStaerke(iStaerke)) {
-			this.staerke = iStaerke;
+	public void setType (int iType) {
+		if (iType == 0 || iType == 1) {
+			this.type = iType;
+		}
+	}
+	public void setAgility (int iAgility) {
+		if (checkAgility(iAgility)) {
+			this.agility = iAgility;
 		}
 	}
 	
@@ -63,8 +69,12 @@ public class GameCharacter {
 		return this.defend_power;
 	}
 	
-	public int getStaerke () {
-		return this.staerke;
+	public int getAgility () {
+		return this.agility;
+	}
+	
+	public int getType () {
+		return this.type;
 	}
 	
 	//checkers
@@ -81,7 +91,8 @@ public class GameCharacter {
 		return (iDefendPower > 0);
 	}
 	
-	private boolean checkStaerke (int iStaerke) {
-		return iStaerke >= 0;
+	private boolean checkAgility (int iAgility) {
+		return iAgility >= 0;
 	}
 }
+
