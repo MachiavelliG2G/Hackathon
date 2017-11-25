@@ -13,6 +13,7 @@ export const HomeView = () => (
       <h4>You have 0 Ducks</h4>
     </div>
     <Link to='/counter'><button id='battlebtn' height='30px' width='50px' className='btnround'>Ready For Battle</button></Link>
+    <Link to='/character'><button id='battlebtn' height='30px' width='50px' className='btnround'>Create Character</button></Link>
   </div>
 )
 
