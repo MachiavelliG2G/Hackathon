@@ -10,81 +10,71 @@ import javax.json.*;
 public class ServerConnection {
 
 	private ServerHandler sh;
+	//private GameManager gm;
+	
+	private static final String CMD_NEW = "NEW_PLAYER";
+	private static final String CMD_ATTACK = "ATTACK";
+	private static final String CMD_SPECIAL = "SPECIAL";
+	
 	
 	
 	public ServerConnection() {
 		sh = null;
+		//gm = null;
 	}
 	 
+	
+	//public void linkGameManager(GameManager gm) {
+		//this.gm = gm;
+	//}
+	
 	public void linkServerHandler(ServerHandler sh) {
 		this.sh = sh;
 	}
 	
-	
-	public void postFightUpdate(Fight f, GameCharacter gc) {
-		//Construct JSON
-		
-		//Hand to server manager
-		
+	public String getUpdateString() {
+		return "Nein";
 	}
-	
-	public void postCharacterUpdate(GameCharacter gc) {
-		//Construct JSON
-		
-		//Hand to server manager
-	}
-	
-	public void postWorldUpdate(World w, GameCharacter gc) {
-		//Construct JSON
-		
-		//Hand to server manager
-		
-	}
-	
 	
 	//user actions
 	public void interpretJSON(String JSON) {
 		//interpret  JSON
+		try {
+			JsonReader jsonReader = Json.createReader(new StringReader(JSON));
+			JsonArray arr = jsonReader.readArray();
 
-		JsonReader jsonReader = Json.createReader(new StringReader(JSON));
-		JsonObject o = jsonReader.readObject();
-		
-		/*
-		JsonReader jsonReader = Json.createReader(new StringReader(JSON));
-		JsonArray arr = jsonReader.readArray();
+			String command = arr.getString(0);
+			String name = arr.getString(1);
+			
+			if(command == this.CMD_NEW) {
+				this.receiveNewPlayer(name);
+			}
+			if(command == this.CMD_ATTACK) {
+				this.receiveFightCommand(name);
+			}
+			if(command == this.CMD_SPECIAL) {
+				this.receiveSpecialCommand(name);
+			}		
+				
+			int a = 0;			
+		}
+		catch(Exception e) {
+				
+		}
 
-		String command = arr.getString(0);
-		String name = arr.getString(1);
-		
-		System.out.println(command);
-		System.out.println(name);
-		
-		int a = 0;
-		*/
 	}
 	
 	
-	private void receiveFightCommand(GameCharacter c, String command) {
+	private void receiveFightCommand(String name) {
 		
 	}
 	
-	private void receiveMoveCommand(GameCharacter c, String command) {
+	private void receiveSpecialCommand(String name) {
 		
 	}
 	
 	
 	private void receiveNewPlayer(String name) {
-		
-	}
-	
-	
-	public static void main(String args[]) {
-		String dummyFightCommand = "{command:\"NEW_PLAYER\",name:\"Simon\"}";
-		String dummyMoveCommand = "{body:[{type:'command_move', target='3'}]}";
-
-		ServerConnection sc = new ServerConnection();
-		
-		sc.interpretJSON(dummyFightCommand);
 		
 	}
 	
